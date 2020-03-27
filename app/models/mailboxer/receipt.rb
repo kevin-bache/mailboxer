@@ -1,4 +1,6 @@
 class Mailboxer::Receipt < ActiveRecord::Base
+  self.implicit_order_column = 'created_at'
+
   self.table_name = :mailboxer_receipts
   attr_accessible :trashed, :is_read, :deleted if Mailboxer.protected_attributes?
 
